@@ -11,12 +11,12 @@ class ScansController < ApplicationController
   def create
 
     @scan = Scan.new scan_params
-    @scan.location = request.env['HTTP_EVE_SOLARSYSTEMNAME']
+    @scan.location = current_location
 
     if @scan.save
-      redirect_to scans_path, notice: "Scan saved."
+      redirect_to scans_path
     else
-      flash[:alert] = "Scan not saved."
+      flash.now[:alert] = "Scan not saved. #{ @scan.errors.full_messages.join '. ' }."
       render :new
     end
 
@@ -27,9 +27,9 @@ class ScansController < ApplicationController
     scan = Scan.find params[:id]
 
     if scan.destroy
-      redirect_to scans_path, notice: "Scan deleted."
+      redirect_to scans_path
     else
-      redirect_to scans_path, alert: "Scan not deleted."
+      redirect_to scans_path, alert: "There was a problem deleting the scan."
     end
 
   end
