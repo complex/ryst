@@ -2,7 +2,6 @@
 <h1>All scans</h1>
 
 <% for scan in @scans do %>
-  <!-- <hr> -->
   <h2>
     <%= scan.location or "Unknown" %> at
     <%= scan.created_at.strftime '%H%M' %>
@@ -33,5 +32,4 @@
       </tbody>
     </table>
   </div>
-  <!-- <pre><%= scan.content %></pre> -->
 <% end %>
