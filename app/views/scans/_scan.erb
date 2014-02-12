@@ -1,0 +1,29 @@
+<h2>
+  <%= scan.location or "Unknown" %> at
+  <%= scan.formatted_time %>
+  <%= link_to "Delete", scan_path(scan), method: :delete %>
+</h2>
+
+<table>
+  <thead>
+    <th class='scan_distance'>Distance</th>
+    <th class='scan_id'>ID</th>
+    <th class='scan_scan_group'>Scan Group</th>
+    <th class='scan_group'>Group</th>
+    <th class='scan_type'>Type</th>
+    <th class='scan_signal'>Signal</th>
+  </thead>
+  <tbody>
+    <% for row in scan.rows do %>
+      <tr>
+        <% columns = row.split "\t" %>
+        <td class='scan_distance'><%= columns[5] %></td>
+        <td class='scan_id'><%= columns[0] %></td>
+        <td class='scan_scan_group'><%= columns[1] %></td>
+        <td class='scan_group'><%= columns[2] %></td>
+        <td class='scan_type'><%= columns[3] %></td>
+        <td class='scan_signal'><%= columns[4] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
