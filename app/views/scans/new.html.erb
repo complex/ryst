@@ -1,0 +1,6 @@
+<p><%= link_to "Back", scans_path %></p>
+<h1>New scan</h1>
+<%= form_for @scan do |form| %>
+  <%= form.text_area :content %>
+  <%= form.submit "Save" %>
+<% end %>

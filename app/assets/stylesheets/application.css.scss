@@ -1,0 +1,55 @@
+//= require_self
+//= require_tree .
+
+body {
+  padding: 1rem 2rem;
+  font-family: 'helvetica neue', 'arial', sans-serif;
+  font-size: 1rem;
+}
+
+a {
+  color: #e67881;
+}
+
+hr {
+  margin: 1em 0;
+  border: none;
+  border-top: solid 0.1em rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  margin: 0;
+  font-family: monospace;
+  font-size: 1rem;
+}
+
+pre {
+  margin: 0;
+}
+
+textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 40em;
+}
+
+input {
+  font-family: 'helvetica neue', 'arial', sans-serif;
+  font-size: 1em;
+}
+
+input[type=submit] {
+  margin: 1em 0 0 0;
+  padding: 1em 3em;
+  border: none;
+  color: #fff;
+  background: #e67881;
+}
+
+textarea {
+  padding: 1em;
+  font-family: monospace;
+  font-size: 1rem;
+  border: solid 0.1em rgba(0, 0, 0, 0.5);
+}
