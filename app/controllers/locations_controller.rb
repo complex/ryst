@@ -8,7 +8,7 @@ class LocationsController < ApplicationController
     if current_location
       redirect_to location_path(current_location)
     else
-      redirect_to scans_path
+      redirect_to scans_path, alert: "No system found. This feature only works in game."
     end
   end
 
