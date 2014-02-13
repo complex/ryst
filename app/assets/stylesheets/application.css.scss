@@ -1,5 +1,4 @@
 //= require_self
-//= require_tree .
 
 @mixin clear {
   &:after {
@@ -25,13 +24,22 @@ body {
   font-family: 'helvetica neue', 'arial', sans-serif;
   font-size: 0.8rem;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  color: #000;
+  background: #fff;
 
   > p {
     margin: -1rem -1rem 1rem -1rem;
     padding: 0.5rem 1rem;
-    background: #ffece6;
+    font-weight: bold;
+    color: #fff;
+    background: #e67881;
   }
 
+}
+
+nav {
+  font-weight: bold;
 }
 
 h1,
@@ -46,7 +54,7 @@ td {
 a {
   text-decoration: none;
   color: #e67881;
-  border-bottom: solid 0.2em #e67881;
+  border-bottom: solid 0.1em #e67881;
 }
 
 ul {
@@ -106,7 +114,9 @@ textarea {
   padding: 0.5em 1em;
   font-family: monospace;
   font-size: 1rem;
-  border: solid 0.1em #aaa;
+  color: #000;
+  background: #f5f5f5;
+  border: solid 0.1em #ccc;
 }
 
 table {
