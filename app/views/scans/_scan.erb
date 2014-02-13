@@ -1,5 +1,12 @@
 <h2>
-  <span><%= scan.location or "Unknown" %> at <%= scan.formatted_time %></span>
+  <span>
+    <% if scan.location.present? %>
+      <%= link_to scan.location, location_path(scan.location) %>
+    <% else %>
+      Unknown
+    <% end %>
+    at <%= scan.formatted_time %>
+  </span>
   <%= link_to "Delete", scan_path(scan), method: :delete %>
 </h2>
 
