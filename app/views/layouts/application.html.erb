@@ -4,6 +4,7 @@
   <head>
     <title>R.Y.S.T.</title>
     <%= stylesheet_link_tag 'application' %>
+    <%= stylesheet_link_tag 'dark' if in_game? %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
   </head>

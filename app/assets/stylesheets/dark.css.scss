@@ -1,0 +1,26 @@
+body {
+  color: #fff;
+  background: #111;
+}
+
+hr {
+  border-top: solid 0.1em #333;
+}
+
+textarea {
+  color: #fff;
+  background: #1a1a1a;
+  border: solid 0.1em #333;
+}
+
+tbody {
+
+  tr:nth-child(odd) {
+    background: #1a1a1a;
+  }
+
+  tr:last-child {
+    border-bottom: solid 0.1em #333;
+  }
+
+}
