@@ -2,14 +2,14 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
-  helper_method :in_game?
+  helper_method :current_system, :in_game?
 
-  def current_location
+  def current_system
     request.env['HTTP_EVE_SOLARSYSTEMNAME']
   end
 
   def in_game?
-    current_location.present?
+    current_system.present?
   end
 
 end

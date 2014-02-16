@@ -9,7 +9,7 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body>
+  <body class='<%= params[:controller] %>' id='<%= params[:action] %>'>
 
     <% if alert %>
       <p><%= alert %></p>
@@ -19,11 +19,41 @@
     <% end %>
 
     <nav>
+
       <ul>
-        <li><%= link_to "All scans", scans_path %></li>
-        <li><%= link_to "Scans in this system", current_locations_path %></li>
-        <li><%= link_to "New scan", new_scan_path %></li>
+        <li class='<%= 'current' if current_route == 'scans#index' %>'>
+          <%= link_to "All scans", scans_path %>
+        </li>
+        <% if in_game? %>
+          <li class='<%= 'current' if current_route == 'systems#show' and current_system == params[:id] %>'>
+            <%= link_to "Scans in this system", current_systems_path %>
+          </li>
+        <% end %>
+        <li class='<%= 'current' if current_route == 'scans#new' %>'>
+          <%= link_to "New scan", new_scan_path %>
+        </li>
       </ul>
+
+      <% if in_game? %>
+        <ol>
+          <li>
+            <%= system = system_at -2; link_to system, system_path(system) %>
+          </li>
+          <li>
+            <%= system = system_at -1; link_to system, system_path(system) %>
+          </li>
+          <li>
+            <%= link_to current_system, system_path(current_system) %>
+          </li>
+          <li>
+            <%= system = system_at 1; link_to system, system_path(system) %>
+          </li>
+          <li>
+            <%= system = system_at 2; link_to system, system_path(system) %>
+          </li>
+        </ol>
+      <% end %>
+
     </nav>
 
     <main>

@@ -1,0 +1,4 @@
+<!-- <h1>Scan</h1> -->
+<%= render partial: 'scans/scan', collection: [ @scan ] %>
+<h2>Raw</h2>
+<%= text_area_tag :content, @scan.content, autofocus: true %>

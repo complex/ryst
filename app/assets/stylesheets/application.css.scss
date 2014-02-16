@@ -1,4 +1,5 @@
 //= require_self
+//= require scans
 
 @mixin clear {
   &:after {
@@ -39,7 +40,72 @@ body {
 }
 
 nav {
+  @include split;
   font-weight: bold;
+
+  ul {
+
+    li.current a {
+      padding: 0.5em 1em;
+      color: #fff;
+      background: #e67881;
+    }
+
+  }
+
+  ol {
+
+    li {
+      margin-right: 1em;
+
+      &:after {
+        margin-left: 1em;
+      }
+
+      &:before {
+        margin-right: 1em;
+      }
+
+      &:nth-child(1) {
+        opacity: 0.3;
+
+        &:after {
+          content: "<<";
+        }
+
+      }
+
+      &:nth-child(2) {
+        opacity: 0.5;
+
+        &:after {
+          content: "<";
+        }
+
+      }
+
+      &:nth-child(4) {
+        opacity: 0.5;
+
+        &:before {
+          content: ">";
+        }
+
+      }
+
+      &:nth-child(5) {
+        opacity: 0.3;
+
+        &:before {
+          content: ">>";
+        }
+
+      }
+
+    }
+
+  }
+
 }
 
 h1,
@@ -57,7 +123,8 @@ a {
   border-bottom: solid 0.1em #e67881;
 }
 
-ul {
+ul,
+ol {
   margin: 0;
   padding: 0;
 }
@@ -66,6 +133,11 @@ li {
   display: inline-block;
   margin-right: 2em;
   list-style: none;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
 }
 
 hr {
@@ -97,31 +169,39 @@ pre {
   margin: 0;
 }
 
+label {
+  font-weight: bold;
+}
+
 input {
+  margin: 0;
   font-family: 'helvetica neue', 'arial', sans-serif;
   font-size: 1em;
 }
 
 input[type=submit] {
-  margin: 1em 0 0 0;
   padding: 1em 3em;
   border: none;
   color: #fff;
   background: #e67881;
 }
 
+input[type=text],
 textarea {
   display: block;
   box-sizing: border-box;
-  width: 90%;
-  height: 40em;
-  margin-top: 3rem;
+  margin: 0.5em 0 2em 0;
   padding: 0.5em 1em;
   font-family: monospace;
   font-size: 1rem;
   color: #000;
   background: #f5f5f5;
   border: solid 0.1em #ccc;
+}
+
+textarea {
+  width: 100%;
+  height: 40em;
 }
 
 table {

@@ -4,6 +4,10 @@ class ScansController < ApplicationController
     @scans = Scan.order 'created_at DESC'
   end
 
+  def show
+    @scan = Scan.find params[:id]
+  end
+
   def new
     @scan = Scan.new
   end
@@ -11,7 +15,7 @@ class ScansController < ApplicationController
   def create
 
     @scan = Scan.new scan_params
-    @scan.location = current_location
+    @scan.system = current_system
 
     if @scan.save
       redirect_to scans_path
@@ -37,7 +41,7 @@ class ScansController < ApplicationController
   private
 
   def scan_params
-    params.require(:scan).permit :location, :content
+    params.require(:scan).permit :system, :content
   end
 
 end
