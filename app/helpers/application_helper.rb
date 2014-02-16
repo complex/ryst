@@ -18,6 +18,10 @@ module ApplicationHelper
     "#{ params[:controller] }##{ params[:action] }"
   end
 
+  def in_route_system?
+    ROUTE.include? current_system
+  end
+
   def system_at index
 
     route_length = ROUTE.length

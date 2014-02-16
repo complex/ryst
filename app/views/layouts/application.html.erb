@@ -34,7 +34,7 @@
         </li>
       </ul>
 
-      <% if in_game? %>
+      <% if in_game? and in_route_system? %>
         <ol>
           <li>
             <%= system = system_at -2; link_to system, system_path(system) %>
