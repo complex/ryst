@@ -1,8 +1,8 @@
 module ApplicationHelper
 
   ROUTE = [
-    'VFK-IV', 'I30-3A', '2O9G-D', 'NC-N3F', 'II-509', 'C7Y-7Z',
-    'X-Z4DA', '33RB-0', '3OAT-Q', 'N-TFXK', 'DKUK-G', 'ZOYW-O',
+    'VFK-IV', 'I30-3A', '2O9G-D', 'NC-N3F', 'II-5O9', 'C7Y-7Z',
+    'X-Z4DA', '33RB-O', '3OAT-Q', 'N-TFXK', 'DKUK-G', 'ZOYW-O',
     'RO0-AF', '5W3-DG', '7T6P-C', '5W3-DG', 'LT-DRO', '8S28-3',
     '3T7-M8', 'MZ1E-P', 'J1AU-9', 'X3-PBC', 'U-TJ7Y', 'A4L-A2',
     'CZDJ-1', 'UJY-HE', 'RG9-7U', 'CZDJ-1', 'A4L-A2', 'UEJX-G',
